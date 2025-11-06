@@ -2,8 +2,11 @@ import pandas as pd
 import pytest
 from tensorflow.keras.models import Sequential
 
-from train import (read_data,
+from train_notebook import (reset_seeds,
+                   read_data,
+                   process_data,
                    create_model,
+                   config_mlflow,
                    train_model)
 
 
