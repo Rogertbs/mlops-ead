@@ -1,0 +1,84 @@
+### Python ###
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.nox/
+
+# PyInstaller / Nuitka / etc. (Se usar)
+# Exe files
+*.exe
+*.win32.exe
+*.app
+*.whl
+# Build folders
+spec/
+dist/
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+
+# Arquivos temporários/backups
+*~
+*.bak
+*.swp
+.DS_Store # (MacOS)
+
+### ML/MLOps (MLflow e Outros) ###
+# Se estiver usando MLflow (como indicado na pergunta anterior)
+mlruns/
+mlruns_db/
+
+### IDEs e Editores (Remova os que não usa) ###
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# MyPy
+.mypy_cache/
+
