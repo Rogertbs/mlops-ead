@@ -85,3 +85,10 @@ Com o ambiente ativado e as dependências instaladas, execute o arquivo:
 python train_notebook.py
 
 O script será executado, o modelo será treinado por 50 epochs e o experimento será registrado no MLflow.
+
+
+
+### 3. Após configurar o ambiente virtual e as variáveis de .env execute o fastApi
+```bash
+uvicorn app.main:app --host 0.0.0.0 --reload
+
