@@ -5,9 +5,13 @@ import json
 import mlflow
 import uvicorn
 import numpy as np
+from dotenv import load_dotenv
+from os import getenv
 from pydantic import BaseModel
 from fastapi import FastAPI
 
+DOTENV_PATH = '.env'
+load_dotenv(dotenv_path=DOTENV_PATH)
 
 class FetalHealthData(BaseModel):
     accelerations: float
@@ -31,18 +35,14 @@ app = FastAPI(title="Fetal Health API",
 
 
 def load_model():
-    #MLFLOW_TRACKING_URI = 'https://dagshub.com/rogeriotbs/mlops-ead-puc.mlflow'
-    MLFLOW_TRACKING_URI = 'https://dagshub.com/renansantosmendes/puc_lectures_mlops.mlflow'
-    #MLFLOW_TRACKING_USERNAME = 'rogeriotbs'
-    MLFLOW_TRACKING_USERNAME = 'renansantosmendes'
-    #MLFLOW_TRACKING_PASSWORD = 'abe754107b721364b6f587be1d0d3366ebdf30dd'
-    MLFLOW_TRACKING_PASSWORD = '6d730ef4a90b1caf28fbb01e5748f0874fda6077'
-
+    MLFLOW_TRACKING_URI = getenv('MLFLOW_TRACKING_URI', '')
+    MLFLOW_TRACKING_USERNAME = getenv('MLFLOW_TRACKING_USERNAME', '')
+    MLFLOW_TRACKING_PASSWORD = getenv('MLFLOW_TRACKING_PASSWORD', '')
     os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
     os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
     client = mlflow.MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
-    registered_model = client.get_registered_model('fetal_health')
+    registered_model = client.get_registered_model(getenv('MODEL_NAME', 'fetal_health'))
     run_id = registered_model.latest_versions[-1].run_id
     logged_model = f'runs:/{run_id}/model'
     loaded_model = mlflow.pyfunc.load_model(logged_model)
