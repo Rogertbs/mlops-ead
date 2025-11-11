@@ -57,6 +57,7 @@ source venv/bin/activate
 # venv\Scripts\activate.bat
 # No Windows (PowerShell):
 # venv\Scripts\Activate.ps1
+```
 
 ### 3. Instalar Dependências
 Este script requer TensorFlow/Keras, MLflow, Pandas e Scikit-learn.
@@ -70,12 +71,13 @@ mlflow
 pandas
 matplotlib
 scikit-learn
-Em seguida, instale:
+```
 
-Bash
+Em seguida, instale:
 
 ```bash
 pip install -r requirements.txt
+```
 
 ### 4. Executar o Script
 Com o ambiente ativado e as dependências instaladas, execute o arquivo:
@@ -83,6 +85,7 @@ Com o ambiente ativado e as dependências instaladas, execute o arquivo:
 
 ```bash
 python train_notebook.py
+```
 
 O script será executado, o modelo será treinado por 50 epochs e o experimento será registrado no MLflow.
 
