@@ -1,4 +1,4 @@
-# 🧠 Treinamento de Modelo de Classificação de Saúde Fetal
+# Treinamento de Modelo de Classificação de Saúde Fetal
 
 Este script Python (`train_notebook.py`) implementa um pipeline completo de Machine Learning, focando no **pré-processamento de dados**, **treinamento** de um modelo de **Deep Learning** (Rede Neural Densa) e **rastreamento** do experimento usando **MLflow**.
 
@@ -34,7 +34,7 @@ O código executa as seguintes etapas:
 
 ---
 
-## 🚀 Como Rodar o Código
+## Como Rodar o Código
 
 Para garantir que todas as dependências estejam isoladas, utilize um **Ambiente Virtual (`venv`)**.
 
