@@ -4,7 +4,7 @@ Este script Python (`train_notebook.py`) implementa um pipeline completo de Mach
 
 ---
 
-## 🎯 O que o Código Faz
+## O que o Código Faz
 
 O código executa as seguintes etapas:
 
@@ -94,4 +94,23 @@ O script será executado, o modelo será treinado por 50 epochs e o experimento 
 ### 3. Após configurar o ambiente virtual e as variáveis de .env execute o fastApi
 ```bash
 uvicorn app.main:app --host 0.0.0.0 --reload
+```
+
+### 4. Teste de carga na api - digite o comando abaixo no diretorio do projeto (não esqueça de instalar o pacote locust no python)
+```bash
+locust
+```
+
+No navegador abra a página do Locust e configure um teste:
+Por exemplo, será simulado 1000 usuários, a cada segundo irá acessar 10 usuários de uma vez, no host da api.
+<img width="711" height="399" alt="image" src="https://github.com/user-attachments/assets/12ac5928-fae2-44bf-8b05-113d4a9c981e" />
+
+Após executar o teste você pode visualizar um gráfico com o número de requests, percentual de tempo de resposta por requisição e número de usuários usando a api.
+<img width="1196" height="715" alt="image" src="https://github.com/user-attachments/assets/4066133f-96a1-4139-8e06-4e56fb5f3421" />
+
+As configurações de request ficam no arquivo locustfile.py do projeto.
+
+
+
+
 
